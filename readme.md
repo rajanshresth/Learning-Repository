@@ -1,8 +1,8 @@
 # My Learnings Repository 📚
----
 
 Welcome to my personal learning repository! Here, I organize my knowledge and insights. Each folder represents a specific topic, containing informative READMEs with valuable information, code snippets, and resources.
 
+----
 ## How to Utilize This Repository 🚀
 1. **Browse Topics**
 Explore the repository by navigating through different folders. Each folder corresponds to a specific topic of interest.
