@@ -32,7 +32,7 @@ function secondLargest2(arr) {
       largest = arr[i];
       secondLargest = largest;
     } else if (arr[i] != largest && arr[i] > secondLargest) {
-      return (secondLargest = arr[i]);
+       secondLargest = arr[i];
     }
   }
   return secondLargest;
