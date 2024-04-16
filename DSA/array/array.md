@@ -34,12 +34,13 @@ JavaScript provides a variety of array methods that allow you to manipulate arra
    ```javascript
     let fruits = ["apple","banana"];
     fruits.push('orange');
-    // ["apple","banana", "orange]
+    // ["apple","banana", "orange"]
    ```
 2. `pop()`: Removes the last element from an array and returns that element.
    ```javascript
     let fruits = ['apple','banana'];
     let lastFruit = fruits.pop();
+    console.log(lastFruit);
    ```
 3. `shift()`: Removes the first element from an array and returns that element.
     ```javascript
@@ -86,3 +87,48 @@ JavaScript provides a variety of array methods that allow you to manipulate arra
     });
     // Output: 1, 2, 3, 4
     ``` 
+10. `map`: Transform elements of an array into a new array based on a provided callback function
+    1.  `Syntax`: The `map` method is called on an array and takes a callback function as its argument. The callback function is called for each element of the array and has three parameters. The current element being processed, the index of the current element, and the array itself.
+      ```javascript
+         const newArray = array.map(callback(currentValue,index, array));
+      ```
+      2. `Callback Function`: The callback function recieves three arguments:
+      --> `currentValue`: The current element being processed in the array.
+      --> `index(optional)`: The index of the current element being processed. 
+      --> `array(optional)`: The array that `map` was called upon.
+      3. `Return Value`: The `map` method returns a new array with the results of calling the provided callback function on each element of the original array. It does not mutate the original array.
+      ```javascript
+         const numbers= [1,2,3,4,5];
+         const doubledNumbers = numbers.map((num)=>num*2)
+         console.log(doubledNumers);
+      ```
+11. `filter`: create a new array with all elements that pass a test implemented by the provided callback function. It iterates over each element of the array and includes only those elements for which the callback function returns true.
+    1.  `Syntax`: The `filter` method is called on an array and takes a callback function as its argument.
+    2.  `Callback function`: The callback function provided to `filter` takes three arguments: 
+        1.  `element`: THe current elements being processed in the array.
+        2.  `index(optional)`: The index of the current element being processed.
+        3.  `array(optional)`: The array that `filters` was called upon.
+    3. `Return Value`: The `filter` method returns a new array containing only the elements for which the callback function returns true.
+    ```javascript
+         const numbers = [1,2,3,4,5];
+         const evenNumbers = numbers.filter((num)=>num%2===0);
+         console.log(evenNumbers); //output: [2,4]
+   ```
+12. `reduce`: reduce the elements of an array into a single value, such as number, string, or object. It executes a provided callback function once for each element in the array, resulting in a single output value.
+      1. `syntax`: The `reduce` method is called on an array and takes a callback function as its first argument. It can optionally take an initial value as the second argument.
+         ```javascript
+            const result = array.reduce(callback(accumulator, currentValue, index, array),initialValue);
+         ```
+      2. `callback function`: The callback function provided to `reduce` takes four arguments:
+         1. `accumulator`: The accumulator accumulates the callback's return values. It is the accumulated value previously returned in the last invocation of the callback, or the `initalValue` if provided.
+         2. `currentValue`: The current element being processed in the array.
+         3. `index(optional)`: The index of the current element being processed.
+         4. `array(optional)`: The array that `reduce` was called upon.
+      3. `Initial Value`: The `initalValue` parameter is optional. If provided, it is used as the initial value of the accumulator. If not provided, the first element of the array is used as the initial value, and itertion starts from the second element.
+      4. `Return Value`: The `reduce` method returns the accumulated value after iterting through all elements of the array.
+
+   ```javascript
+      const numbers = [1,2,3,4,5];
+      const sum = numbers.reduce((accumulator, currentValue)=>accumulator +currentValue,0);
+      console.log(sum); //Output: 15
+   ```

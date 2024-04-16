@@ -33,15 +33,15 @@ for (let i = 0; i < arr.length; i++) {
 // InBuild Loop method
 const num = ["one", "two", " three", "four", "five"];
 num.map((item, index, arr) => {
-  //   console.log("Item: ", item, "Index: ", index, "Arr: ", arr[index]);
-  //   if (item == 3) {
-  //     console.log(index);
-  //   }
-  //   // arr of num 3
-  //   if (item == 3) {
-  //     console.log(arr);
-  //   }
-  //   return item*2;
+  // console.log("Item: ", item, "Index: ", index, "Arr: ", arr[index]);
+  // if (item == 3) {
+  //   console.log(index);
+  // }
+  // // arr of num 3
+  // if (item == 3) {
+  //   console.log(arr);
+  // }
+  // return item * 2;
 });
 
 // concat method in js
@@ -56,14 +56,15 @@ const newNumbs = numbers.filter((item, index, arr) => {
 });
 // console.log(newNumbs);
 
-// const newNumbs2 = numbers.reduce((acc, item, index, arr) => {
-//   //   console.log(acc, item);
-//   numbers.unshift(index + 1);
-//   console.log(`changed ${index + 1}`, numbers);
-//   numbers.pop();
-//   console.log(`changed ${index - 1}`, numbers);
-//   return acc + item;
-// }, 0);
+const newNumbs2 = numbers.reduce((acc, item, index, arr) => {
+  console.log("newNum", acc, item);
+  numbers.unshift(index + 1);
+  console.log(`changed ${index + 1}`, numbers);
+  numbers.pop();
+  console.log(`changed ${index - 1}`, numbers);
+  return acc + item;
+}, 0);
+console.log(newNumbs2);
 
 // some method in js
 const someArr = [1, 2, 3, 4, 5];
@@ -71,7 +72,7 @@ const res = someArr.some((item, index, arr) => {
   //   console.log(item, index, arr);
   return item > 3;
 });
-// console.log(res);
+// console.log("some", res);
 
 // every method in js
 const everyArr = [1, 2, 3, 4, 5];
